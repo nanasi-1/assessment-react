@@ -17,34 +17,51 @@ body {
 
 .container {
   background-color: var(--color-white);
-  padding: 20px 50px;
+  padding: 40px 50px;
   max-width: 600px;
   width: 98vw;
   margin-right: auto;
   margin-left: auto;
 }
 
+h1 {
+  margin-top: 0;
+}
+
 button {
   background-color: var(--color-bg);
   border: solid 1px var(--color-black);
   border-radius: 5px;
-  padding-inline: 20px;
   cursor: pointer;
-  height: 100%;
 }
 
 input {
   padding-inline: 5px;
-  height: 100%;
-  width: 70%;
 }
 
 .name-input-area {
   height: 30px;
   gap: 0 5px;
   display: flex;
+
+  button {
+    height: 100%;
+    padding-inline: 20px;
+  }
+
+  input {
+    height: 100%;
+    width: 70%;
+  }
 }
 
 .result-text {
   line-break: auto;
+}
+
+.twitter-hashtag-button {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 5px 15px;
+  border-radius: calc(infinity * 1px);
 }

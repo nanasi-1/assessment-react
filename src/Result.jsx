@@ -1,4 +1,5 @@
 import { assessment } from "./assessment";
+import { TweetButton } from "./TweetButton";
 
 export const Result = ({name}) => {
   // nameが空のときは空
@@ -10,6 +11,7 @@ export const Result = ({name}) => {
     <>
       <h2>診断結果</h2> 
       <p className="result-text">{result}</p>
+      <TweetButton hashtag={'あなたのいいところ'} />
     </>
   )
 }
