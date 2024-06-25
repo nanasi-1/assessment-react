@@ -9,9 +9,14 @@ const NameInputArea = ({setName}) => {
     setName(newName)
   }
 
+  const handleKeyDown = e => {
+    if(e.code !== 'Enter') return
+    handleClick()
+  }
+
   return (
     <div className="name-input-area">
-      <input type="text" name="name-input" ref={inputElem} />
+      <input type="text" name="name-input" ref={inputElem} onKeyDown={handleKeyDown} />
       <button onClick={handleClick}>診断する</button>
     </div>
   )
