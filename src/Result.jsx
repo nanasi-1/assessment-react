@@ -8,7 +8,7 @@ export const Result = ({name}) => {
   return (
     <>
       <p>こちらは結果エリア</p>
-      <p>{result}</p>
+      <p className="result-text">{result}</p>
     </>
   )
 }

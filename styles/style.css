@@ -36,10 +36,15 @@ button {
 input {
   padding-inline: 5px;
   height: 100%;
+  width: 70%;
 }
 
 .name-input-area {
   height: 30px;
   gap: 0 5px;
   display: flex;
+}
+
+.result-text {
+  line-break: auto;
 }
