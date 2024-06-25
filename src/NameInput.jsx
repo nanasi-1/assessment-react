@@ -16,7 +16,7 @@ const NameInputArea = ({setName}) => {
 
   return (
     <div className="name-input-area">
-      <input type="text" name="name-input" ref={inputElem} onKeyDown={handleKeyDown} />
+      <input type="text" name="name-input" ref={inputElem} onKeyDown={handleKeyDown} placeholder="名前" />
       <button onClick={handleClick}>診断する</button>
     </div>
   )

@@ -7,7 +7,7 @@ export const TweetButton = ({hashtag}) => {
   const href = `https://x.com/intent/tweet?button_hashtag=${encodedHashtag}&ref_src=twsrc%5Etfw`
 
   return (
-    <a href={href}>
+    <a href={href} target="_blank">
       <button className="twitter-hashtag-button">
         #{hashtag} をツイート
       </button>
