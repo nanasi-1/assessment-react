@@ -1,11 +1,11 @@
 import 'https://unpkg.com/react@18/umd/react.development.js'
 import 'https://unpkg.com/react-dom@18/umd/react-dom.development.js'
 
-import { NameInput } from "./NameInput";
-import { Result } from "./Result";
+import { NameInput } from "./NameInput.jsx";
+import { Result } from "./Result.jsx";
 const { useState } = React
 
-const App = () => {
+export const App = () => {
   const [name, setName] = useState('')
 
   return (

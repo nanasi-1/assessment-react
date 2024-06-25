@@ -1,4 +1,4 @@
-import { assessment } from "./assessment";
+import { assessment } from "./assessment.js";
 
 export const Result = ({name}) => {
   // nameが空のときは空
