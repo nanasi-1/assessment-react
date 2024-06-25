@@ -9,7 +9,7 @@ export const Result = ({name}) => {
 
   return (
     <>
-      <h2>診断結果</h2> 
+      <h2 className="result-title">診断結果</h2> 
       <p className="result-text">{result}</p>
       <TweetButton hashtag={'あなたのいいところ'} />
     </>

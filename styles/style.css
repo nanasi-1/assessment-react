@@ -10,18 +10,20 @@
 }
 
 body {
-  margin: 5vh 0;
+  margin: 10vh 0;
   background-color: var(--color-bg);
   color: var(--color-black);
 }
 
 .container {
   background-color: var(--color-white);
-  padding: 40px 50px;
+  padding: 40px clamp(0px, 7vw, 50px);
   max-width: 600px;
   width: 98vw;
   margin-right: auto;
   margin-left: auto;
+  border: solid 1px var(--color-black);
+  border-radius: 10px;
 }
 
 h1 {
@@ -33,10 +35,6 @@ button {
   border: solid 1px var(--color-black);
   border-radius: 5px;
   cursor: pointer;
-
-  &:active {
-    opacity: 0.8;
-  }
 }
 
 input {
@@ -71,17 +69,22 @@ input {
   }
 
   button {
-    height: 100%;
-    padding-inline: 20px;
+    padding-inline: clamp(0vw, 4vw, 20px);
   }
 
   input {
-    height: 100%;
     width: 70%;
   }
 }
 
+.result-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 .result-text {
+  margin-top: 0;
+  margin-bottom: 25px;
   line-break: auto;
 }
 
