@@ -1,8 +1,16 @@
+const { useRef } = React
+
 const NameInputArea = () => {
+  const inputElem = useRef('')
+
+  const handleClick = () => {
+    console.log(inputElem.current.value)
+  }
+
   return (
     <div className="name-input-area">
-      <input type="text" name="name-input" />
-      <button>診断する</button>
+      <input type="text" name="name-input" ref={inputElem} />
+      <button onClick={handleClick}>診断する</button>
     </div>
   )
 }
