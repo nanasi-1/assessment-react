@@ -1,10 +1,10 @@
 const { useRef } = React
 
-const NameInputArea = () => {
-  const inputElem = useRef('')
+const NameInputArea = ({setName}) => {
+  const inputElem = useRef(null)
 
   const handleClick = () => {
-    console.log(inputElem.current.value)
+    setName(inputElem.current.value)
   }
 
   return (
@@ -15,11 +15,11 @@ const NameInputArea = () => {
   )
 }
 
-export const NameInput = () => {
+export const NameInput = ({setName}) => {
   return (
     <>
       <p>診断したい名前を入れて下さい</p>
-      <NameInputArea />
+      <NameInputArea setName={setName} />
     </>
   )
 }

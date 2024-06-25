@@ -6,5 +6,5 @@ import answers from "./answers.json";
  * @returns {string} 診断結果
  */
 export const assessment = (name) => {
-  return '診断結果が返ってくるはず'
+  return `診断結果が返ってくるはず: ${name}`
 }
