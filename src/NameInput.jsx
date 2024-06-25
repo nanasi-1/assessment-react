@@ -4,7 +4,9 @@ const NameInputArea = ({setName}) => {
   const inputElem = useRef(null)
 
   const handleClick = () => {
-    setName(inputElem.current.value)
+    const newName = inputElem.current.value
+    if(!newName) return
+    setName(newName)
   }
 
   return (
