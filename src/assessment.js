@@ -1,4 +1,4 @@
-import answers from "./answers.json" assert {type: 'json'};
+import answers from "./answers.json";
 
 /** 
  * 名前からいいところを判定する 
