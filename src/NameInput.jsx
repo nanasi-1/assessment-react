@@ -1,4 +1,4 @@
-const { useRef } = React
+import React, { useRef } from 'https://esm.sh/react@18.3.1'
 
 const NameInputArea = ({setName}) => {
   const inputElem = useRef(null)

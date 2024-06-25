@@ -1,3 +1,4 @@
+import React from 'https://esm.sh/react@18.3.1'
 import { assessment } from "./assessment.js";
 
 export const Result = ({name}) => {
