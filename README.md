@@ -64,7 +64,59 @@ deno run -A npm:vite build
 
 * * *
 
-まず、ここではVSCodeの拡張機能であるDenoを使って**いません**。
+まず、Reactの`import`は以下のようになっています。
+
+```jsx
+import React, { useState } from 'https://esm.sh/react@18.3.1'
+import ReactDOM from 'https://esm.sh/react-dom@18.3.1'
+```
+
+こんな感じの記述が何回も出てきます。
+~~正直言ってめんどそう~~
+
+こちらでは、esm.sh からReactを`import`しています。
+ちゃんとESModuleです。やったね。
+
+...で、何度もこんな長ったらしいURLを書くのは嫌ですよね。
+実は解決策自体はありまして。`React`をグローバル変数にしてしまえばいいのです。
+
+...といっても普通にグローバル変数にしたらうまくいかなかったので（多分実行順序の関係）、おとなしくグローバル変数を定義してくれるやつを使いましょう。
+
+```js
+import 'https://unpkg.com/react@18.3.1/umd/react.development.js'
+import 'https://unpkg.com/react-dom@18/umd/react-dom.development.js'
+```
+
+```js
+const { useRef } = React
+```
+
+もしくは`export.js`などのファイルを作って、そこでReactを`import`する方法もあります（未実証）。
+
+`export.js`:
+
+```js
+export * from 'https://esm.sh/react@18.3.1'
+export { default } from 'https://esm.sh/react@18.3.1'
+```
+
+`App.jsx`:
+
+```js
+import React, { useState } from './export.js'
+import ReactDOM from 'https://esm.sh/react-dom@18.3.1'
+
+const App = () => {
+  // 略
+}
+```
+
+どの方法を選ぶかはその場次第です。
+グローバル変数が一番楽なのは間違いないでしょう。
+
+* * *
+
+また、ここではVSCodeの拡張機能であるDenoを使って**いません**。
 
 いや実は、この拡張機能を使えば、補完がいい感じになるんですよ。
 でも補完なくてもどうにかなるし、ちょっと拡張機能自体が不安定なのがなぁ...

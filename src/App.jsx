@@ -1,10 +1,12 @@
-import React, { useState } from 'https://esm.sh/react@18.3.1'
-import ReactDOM from 'https://esm.sh/react-dom@18.3.1'
+import 'https://unpkg.com/react@18.3.1/umd/react.development.js'
+import 'https://unpkg.com/react-dom@18/umd/react-dom.development.js'
+
+const { useState } = React
 
 import { NameInput } from "./NameInput";
 import { Result } from "./Result";
 
-export const App = () => {
+const App = () => {
   const [name, setName] = useState('')
 
   return (
