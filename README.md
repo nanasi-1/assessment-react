@@ -47,6 +47,32 @@ deno run -A npm:vite build
 ...あとはパスの解決して`type="module"`消して`crossorigin`消せば終わりだよ（諦めた）
 
 
+## Testing
+
+Command:
+
+```sh
+deno test
+```
+
+...テストは`Deno.test`を使って書いてね
+
+```js
+import { assert } from "https://deno.land/std@0.224.0/assert/mod.ts";
+
+Deno.test('test', () => {
+  assert(1 + 1 === 2)
+  assert('Hello, World!'.includes(','))
+})
+```
+
+アサーションライブラリなんてないから、自力でどうにかしよう
+まあメソッド覚える必要がないと思うしかない
+
+ちなみに`import`の拡張子がないってエラーはオプションでどうにかなる
+まあでも、正直言ってこの仕様じゃだるすぎるから書かなくていいよ
+
+
 ## 補足
 
 * Reactのテストは無理、`Deno.test`でいける範囲ならいける
