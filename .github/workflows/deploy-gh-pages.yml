@@ -22,18 +22,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Test Path
+        run: echo env $name $url
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          node-version: 18
+          deno-version: 1.44.4
       - name: Build
-        run: deno run -A npm:vite build
+        run: deno run -A npm:vite build --base=$url
+      - name: Check
+        run: |
+          cd dist
+          echo $(cat index.html)
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
