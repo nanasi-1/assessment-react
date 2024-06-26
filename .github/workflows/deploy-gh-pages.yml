@@ -22,8 +22,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Test Path
-        run: echo env $name $url
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
@@ -33,7 +31,7 @@ jobs:
         with:
           deno-version: 1.44.4
       - name: Build
-        run: deno run -A npm:vite build --base=$url
+        run: deno run -A npm:vite build --base=/assessment-react
       - name: Check
         run: |
           cd dist
@@ -52,4 +50,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
